@@ -1,6 +1,9 @@
-<?php
+<html>
+<head>
+<title>Site_test</title>
+</head>
+Test
 
-if (isset($_GET['i'])
-  echo $_GET['i'];
-
-?>
+<body>
+</body>
+</html>
