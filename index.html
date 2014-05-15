@@ -6,7 +6,7 @@
 function Click ()
 {
   if (localStorage.max)
-    localStorage.max = localStorage.max + 1;
+    localStorage.max = Number(localStorage.max) + 1;
   else
     localStorage.max = 1;
 document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
