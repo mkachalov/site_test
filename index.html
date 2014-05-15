@@ -2,6 +2,7 @@
 <head>
 <title>Site_test</title>
 </head>
+<body onload="">
 <script>
 function Click ()
 {
@@ -9,13 +10,15 @@ function Click ()
     localStorage.max = Number(localStorage.max) + 1;
   else
     localStorage.max = 1;
+    document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
 }
-  
+function Init()
+{
 document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
-  
+} 
 </script>
 <div id="result"></div>
 <button onclick="Click()" type="button">Click me!</button>
-<body>
+
 </body>
 </html>
