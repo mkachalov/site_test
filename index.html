@@ -3,13 +3,15 @@
 <title>Site_test</title>
 </head>
 <script>
-localStorage.max = 0;
-
 function Click ()
 {
-  localStorage.max = localStorage.max + 1;
-}
+  if (localStorage.max)
+    localStorage.max = localStorage.max + 1;
+  else
+    localStorage.max = 1;
 document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
+}
+  
 </script>
 <div id="result"></div>
 <button onclick="clickCounter()" type="button">Click me!</button>
