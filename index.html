@@ -4,6 +4,7 @@
 </head>
 <body onload="Init()">
 <script>
+  localStorage.buildings = new Array();
 function Click ()
 {
   if (localStorage.number)
@@ -15,7 +16,7 @@ function Click ()
 
 function Init()
 {
-  localStorage.buildings = new Array();
+
   
 if (!localStorage.number)
   localStorage.number = 0;
