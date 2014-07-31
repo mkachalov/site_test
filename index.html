@@ -4,8 +4,8 @@
 </head>
 <body onload="Init()">
 <script>
-  buildings[] = new Array();
-  
+  buildings = new Array();
+  localStorage.buildings = JSON.stringify(buildings);
   
 function Click ()
 {
@@ -28,14 +28,16 @@ document.getElementById("number_mouse").innerHTML = buildings[0];
 document.getElementById("number_grandma").innerHTML = buildings[1];
 document.getElementById("cost_mouse").innerHTML = Cost(0);
 document.getElementById("cost_grandma").innerHTML = Cost(1);
-localStorage.buildings = JSON.stringify(buildings);
+
   
 } 
 
 function Buy(i)
 {
+buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
 localStorage.number = Number(localStorage.number) - Cost(i);
 buildings[i] = Number(buildings[i]) + 1;
+localStorage.buildings = JSON.stringify(buildings);
 Init();
 }
 
