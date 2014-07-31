@@ -50,9 +50,9 @@ buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
 localStorage.number = Number(localStorage.number) - cost[i];
 buildings[i] = Number(buildings[i]) + 1;
 localStorage.buildings = JSON.stringify(buildings);
-Init();
 cost[i] = cost[i]*1.15;
 localStorage.cost = JSON.stringify(cost);
+Init();
 }
 }
 
