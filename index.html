@@ -6,6 +6,7 @@
 <script>
   buildings = new Array();
   buildings = [0,0,0,0];
+  buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
   localStorage.buildings = JSON.stringify(buildings);
   
 function Click ()
