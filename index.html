@@ -9,6 +9,11 @@
   buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
   localStorage.buildings = JSON.stringify(buildings);
   
+  cost = new Array(); 
+  cost = [15,30,0,0];
+  cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
+  localStorage.cost = JSON.stringify(cost);
+ 
 function Click ()
 {
   if (localStorage.number)
@@ -36,16 +41,23 @@ document.getElementById("cost_grandma").innerHTML = Cost(1);
 
 function Buy(i)
 {
+  cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
+  if (localStorage.number<cost[i])
+   return;
+
 buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
-localStorage.number = Number(localStorage.number) - Cost(i);
+localStorage.number = Number(localStorage.number) - cost[i];
 buildings[i] = Number(buildings[i]) + 1;
 localStorage.buildings = JSON.stringify(buildings);
 Init();
+cost[i] = cost[i]*1.15;
 }
 
 function Cost (i)
 {
-  return 1;
+  cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
+  
+  return cost[i];
 }
 </script>
 <div id="result" ></div>
