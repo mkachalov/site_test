@@ -10,6 +10,7 @@ function Click ()
     localStorage.number = Number(localStorage.number) + 1;
   else
     localStorage.number = 1;
+    document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
 }
 function Init()
 {
