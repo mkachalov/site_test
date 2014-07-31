@@ -69,8 +69,8 @@ function Reset()
 function work() 
 {
  buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
- localStorage.number+=buildings[0]*0.2;
- localStorage.number+=buildings[1]*0.5;
+ localStorage.number = Number(localStorage.number) + buildings[0]*0.2;
+ localStorage.number = Number(localStorage.number) + buildings[1]*0.5;
  document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
 }
 setTimeout(work, 1000);
