@@ -4,7 +4,9 @@
 </head>
 <body onload="Init()">
 <script>
-  localStorage.buildings = new Array();
+  buildings = new Array();
+  
+  
 function Click ()
 {
   if (localStorage.number)
@@ -16,26 +18,24 @@ function Click ()
 
 function Init()
 {
-
+buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
   
 if (!localStorage.number)
   localStorage.number = 0;
-if (!localStorage.buildings[0])
-  localStorage.buildings[0] = 0;
-if (!localStorage.buildings[1])
-  localStorage.buildings[1] = 0;
 
 document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
-document.getElementById("number_mouse").innerHTML = localStorage.buildings[0];
-document.getElementById("number_grandma").innerHTML = localStorage.buildings[1];
+document.getElementById("number_mouse").innerHTML = buildings[0];
+document.getElementById("number_grandma").innerHTML = buildings[1];
 document.getElementById("cost_mouse").innerHTML = Cost(0);
 document.getElementById("cost_grandma").innerHTML = Cost(1);
+localStorage.buildings = JSON.stringify(buildings);
+  
 } 
 
 function Buy(i)
 {
 localStorage.number = Number(localStorage.number) - Cost(i);
-localStorage.buildings[i] = Number(localStorage.buildings[i]) + 1;
+buildings[i] = Number(buildings[i]) + 1;
 Init();
 }
 
