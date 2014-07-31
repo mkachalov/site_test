@@ -14,8 +14,6 @@
   cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
   localStorage.cost = JSON.stringify(cost);
 
-window.onload = function(){setTimeout(work,100);};
-
 function Click ()
 {
   if (localStorage.number)
@@ -23,6 +21,7 @@ function Click ()
   else
     localStorage.number = 1;
     document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
+    setTimeout(work,100);
 }
 
 function Init()
