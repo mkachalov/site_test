@@ -45,7 +45,7 @@ setTimeout(work,100);
 function Buy(i)
 {
   cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
-  if (localStorage.number>=cost[i])
+  if (Math.ceil(localStorage.number)>=Math.ceil(cost[i]))
 {
 
 buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
