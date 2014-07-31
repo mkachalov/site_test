@@ -6,19 +6,35 @@
 <script>
 function Click ()
 {
-  if (localStorage.max)
-    localStorage.max = Number(localStorage.max) + 1;
+  if (localStorage.number)
+    localStorage.number = Number(localStorage.number) + 1;
   else
-    localStorage.max = 1;
-    document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
+    localStorage.number = 1;
 }
 function Init()
 {
-document.getElementById("result").innerHTML="You have clicked the button " + localStorage.max + " time(s).";
+document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
+document.getElementById("number_mouse").innerHTML = localStorage.buildings[0];
+document.getElementById("number_grandma").innerHTML = localStorage.buildings[1];
+document.getElementById("cost_mouse").innerHTML = Cost(0);
+document.getElementById("cost_grandma").innerHTML = Cost(1);
 } 
+function Buy(var i)
+{
+  
+localStorage.number = Number(localStorage.number) - Cost(i);
+localStorage.buildings[i] = Number(localStorage.buildings[i]) + 1;
+}
+
+function Cost (var i)
+{
+  return 1;
+}
 </script>
 <div id="result"></div>
-<button onclick="Click()" type="button">Click me!</button>
+<button onclick="Click()" type="button">Cookie</button><br><br><br>
+<button onclick="Buy(0)" type="button">+1 Mouse</button><div id="number_mouse"></div> <div id="cost_mouse"></div><br>
+<button onclick="Buy(1)" type="button">+1 Grandma</button><div id="number_grandma"></div> <div id="cost_grandma"></div><br>
 
 </body>
 </html>
