@@ -13,6 +13,8 @@
   cost = [15,30,0,0];
   cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
   localStorage.cost = JSON.stringify(cost);
+  
+setInterval(work(),100);
 
 function Click ()
 {
@@ -39,7 +41,7 @@ document.getElementById("number_mouse").innerHTML = buildings[0];
 document.getElementById("number_grandma").innerHTML = buildings[1];
 document.getElementById("cost_mouse").innerHTML = Math.ceil(cost[0]);
 document.getElementById("cost_grandma").innerHTML = Math.ceil(cost[1]);
-setTimeout(work(),100);
+
 } 
 
 function Buy(i)
