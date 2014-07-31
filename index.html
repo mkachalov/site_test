@@ -34,8 +34,8 @@ if (!localStorage.number)
 document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
 document.getElementById("number_mouse").innerHTML = buildings[0];
 document.getElementById("number_grandma").innerHTML = buildings[1];
-document.getElementById("cost_mouse").innerHTML = cost[0];
-document.getElementById("cost_grandma").innerHTML = cost[1];
+document.getElementById("cost_mouse").innerHTML = Math.floor(cost[0]);
+document.getElementById("cost_grandma").innerHTML = Math.floor(cost[1]);
 
   
 } 
@@ -47,10 +47,10 @@ function Buy(i)
 {
 
 buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
-localStorage.number = Number(localStorage.number) - cost[i];
+localStorage.number = Number(localStorage.number) - Math.floor(cost[i]);
 buildings[i] = Number(buildings[i]) + 1;
 localStorage.buildings = JSON.stringify(buildings);
-cost[i] = Math.floor(cost[i]*1.15);
+cost[i] = cost[i]*1.15;
 localStorage.cost = JSON.stringify(cost);
 Init();
 }
