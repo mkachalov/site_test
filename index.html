@@ -12,25 +12,33 @@ function Click ()
     localStorage.number = 1;
     document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
 }
+
 function Init()
 {
+if (!localStorage.number)
+  localStorage.number = 0;
+if (!localStorage.buildings[0])
+  localStorage.buildings[0] = 0;
+if (!localStorage.buildings[1])
+  localStorage.buildings[1] = 0;
+
 document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
 document.getElementById("number_mouse").innerHTML = localStorage.buildings[0];
 document.getElementById("number_grandma").innerHTML = localStorage.buildings[1];
 document.getElementById("cost_mouse").innerHTML = Cost(0);
 document.getElementById("cost_grandma").innerHTML = Cost(1);
 } 
+
 function Buy(var i)
 {
-  
 localStorage.number = Number(localStorage.number) - Cost(i);
 localStorage.buildings[i] = Number(localStorage.buildings[i]) + 1;
 }
 
-function Cost (var i)
+/*function Cost (var i)
 {
   return 1;
-}
+}*/
 </script>
 <div id="result"></div>
 <button onclick="Click()" type="button">Cookie</button><br><br><br>
