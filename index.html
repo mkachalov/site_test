@@ -20,7 +20,7 @@ function Click ()
     localStorage.number = Number(localStorage.number) + 1;
   else
     localStorage.number = 1;
-    document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
+    document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
 }
 
 function Init()
