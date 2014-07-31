@@ -52,16 +52,17 @@ buildings[i] = Number(buildings[i]) + 1;
 localStorage.buildings = JSON.stringify(buildings);
 Init();
 cost[i] = cost[i]*1.15;
+localStorage.cost = JSON.stringify(cost);
 }
 }
 
 function Reset()
 {
-localStorage.buildings  = 0;
 localStorage.number = 0;
-localStorage.cost = 0;
   cost = [15,30,0,0];
   buildings = [0,0,0,0];
+  localStorage.buildings = JSON.stringify(buildings);
+  localStorage.cost = JSON.stringify(cost);
 }
 
 </script>
