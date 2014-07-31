@@ -33,6 +33,7 @@ function Buy(i)
 {
 localStorage.number = Number(localStorage.number) - Cost(i);
 localStorage.buildings[i] = Number(localStorage.buildings[i]) + 1;
+Init();
 }
 
 function Cost (i)
