@@ -55,6 +55,15 @@ cost[i] = cost[i]*1.15;
 }
 }
 
+function Reset()
+{
+localStorage.buildings  = 0;
+localStorage.number = 0;
+localStorage.cost = 0;
+  cost = [15,30,0,0];
+  buildings = [0,0,0,0];
+}
+
 </script>
 <div id="result" ></div>
 <button onclick="Click()" type="button">Cookie</button><br><br><br>
