@@ -13,7 +13,9 @@
   cost = [15,30,0,0];
   cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
   localStorage.cost = JSON.stringify(cost);
- 
+
+window.onload = function(){setTimeout(work,100);};
+
 function Click ()
 {
   if (localStorage.number)
@@ -25,7 +27,7 @@ function Click ()
 
 function Init()
 {
-window.onload = function(){setTimeout(work,100);};
+
 
 buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
 cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
