@@ -43,7 +43,7 @@ document.getElementById("cost_grandma").innerHTML = cost[1];
 function Buy(i)
 {
   cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
-  if (localStorage.number>cost[i])
+  if (localStorage.number>=cost[i])
 {
 
 buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
