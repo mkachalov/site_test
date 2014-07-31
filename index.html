@@ -31,7 +31,7 @@ cost = localStorage.cost ? JSON.parse(localStorage.cost) : [];
 if (!localStorage.number)
   localStorage.number = 0;
 
-document.getElementById("result").innerHTML = "You have " + localStorage.number + " cookies ";
+document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
 document.getElementById("number_mouse").innerHTML = buildings[0];
 document.getElementById("number_grandma").innerHTML = buildings[1];
 document.getElementById("cost_mouse").innerHTML = Math.ceil(cost[0]);
@@ -65,6 +65,15 @@ function Reset()
   localStorage.cost = JSON.stringify(cost);
   Init();
 }
+
+function work() 
+{
+ buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
+ localStorage.number+=buildings[0]*0.2;
+ localStorage.number+=buildings[1]*0.5;
+}
+setTimeout(work, 1000);
+
 
 </script>
 <div id="result" ></div>
