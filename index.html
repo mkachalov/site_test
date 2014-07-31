@@ -2,7 +2,7 @@
 <head>
 <title>Site_test</title>
 </head>
-<body>
+<body onload="Init">
 <script>
 function Click ()
 {
@@ -41,7 +41,7 @@ function Cost (i)
   return 1;
 }
 </script>
-<div id="result" onload="Init()"></div>
+<div id="result" ></div>
 <button onclick="Click()" type="button">Cookie</button><br><br><br>
 <button onclick="Buy(0)" type="button">+1 Mouse</button><div id="number_mouse"></div> <div id="cost_mouse"></div><br>
 <button onclick="Buy(1)" type="button">+1 Grandma</button><div id="number_grandma"></div> <div id="cost_grandma"></div><br>
