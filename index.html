@@ -37,7 +37,20 @@ document.getElementById("number_grandma").innerHTML = buildings[1];
 document.getElementById("cost_mouse").innerHTML = Math.ceil(cost[0]);
 document.getElementById("cost_grandma").innerHTML = Math.ceil(cost[1]);
 
-  
+   var load = function()
+    {
+         setTimeout(work,1000);
+         if (w.removeEventListener)
+         {
+             return w.removeEventListener('load',load,false);
+         }
+         return w.attachEvent('onload',load);
+    };
+    if (w.addEventListener)
+    {
+        return w.addEventListener('load',load,false);
+    }
+    return w.attachEvent('onload',load);
 } 
 
 function Buy(i)
@@ -73,7 +86,6 @@ function work()
  localStorage.number = Number(localStorage.number) + buildings[1]*0.5;
  document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
 }
-setTimeout(work, 100);
 
 
 </script>
