@@ -17,7 +17,7 @@
 setInterval(function(){buildings = localStorage.buildings ? JSON.parse(localStorage.buildings) : [];
  localStorage.number = Number(localStorage.number) + 0.1*buildings[0]*0.2;
  localStorage.number = Number(localStorage.number) + 0.1*buildings[1]*0.5;
- document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies</br> +" + buildings[0]*0.2 + buildings[1]*0.5;
+ document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies</br> +" + Math.ceil(buildings[0]*0.2 + buildings[1]*0.5);
 },100);
 
 function Click ()
