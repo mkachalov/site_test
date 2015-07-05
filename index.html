@@ -39,10 +39,10 @@ if (!localStorage.number)
   localStorage.number = 0;
 
 document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
-find("0#number").innerHTML = buildings[0];
-find("0#cost").innerHTML = Math.ceil(cost[0]);
-find("1#number").innerHTML = buildings[1];
-find("1#cost").innerHTML = Math.ceil(cost[1]);
+document.getElementsByName("0#number").innerHTML = buildings[0];
+document.getElementsByName("0#cost").innerHTML = Math.ceil(cost[0]);
+document.getElementsByName("1#number").innerHTML = buildings[1];
+document.getElementsByName("1#cost").innerHTML = Math.ceil(cost[1]);
 
 } 
 
