@@ -39,10 +39,10 @@ if (!localStorage.number)
   localStorage.number = 0;
 
 document.getElementById("result").innerHTML = "You have " + Math.ceil(localStorage.number) + " cookies ";
-document.getElementsByName("0#number").innerHTML = buildings[0];
-document.getElementsByName("0#cost").innerHTML = Math.ceil(cost[0]);
-document.getElementsByName("1#number").innerHTML = buildings[1];
-document.getElementsByName("1#cost").innerHTML = Math.ceil(cost[1]);
+$("div.0#number").innerHTML = buildings[0];
+$("div.0#cost").innerHTML = Math.ceil(cost[0]);
+$("div.1#number").innerHTML = buildings[1];
+$("div.1#cost").innerHTML = Math.ceil(cost[1]);
 
 } 
 
@@ -77,11 +77,11 @@ function Reset()
 <div id="result" ></div>
 <button onclick="Click()" type="button">Cookie</button><br><br><br>
 <div id="0">
-<button onclick="Buy(0)" type="button">+1 Mouse</button><div id="number"></div><div id="cost"></div>
+<button onclick="Buy(0)" type="button">+1 Mouse</button><div class="0" id="number"></div><div class="0" id="cost"></div>
 </div>
 <br>
 <div id="1">
-<button onclick="Buy(1)" type="button">+1 Grandma</button><div id="number"></div><div id="cost"></div><br>
+<button onclick="Buy(1)" type="button">+1 Grandma</button><div class="1" id="number"></div><div class="1" id="cost"></div><br>
 </div>
 <br><br><br><button onclick="Reset()" type="button">Reset</button>
 
